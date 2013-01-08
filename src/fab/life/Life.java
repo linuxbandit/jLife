@@ -91,7 +91,7 @@ public class Life {
                 backbuffer[i][j] = neighbours(i, j); 
             }
         }        
-        lattice = backbuffer; // ?
+        lattice = backbuffer;
     }
     
     private boolean neighbours(int x, int y)
@@ -102,8 +102,7 @@ public class Life {
         // x-1, y   x, y    x+1, y
         //          x, y+1
         
-        
-        //Moore neighborhood
+        //Moore neighborhood (not used)
         
         // x-1, y-1  x, y-1    x+1, y-1
         // x-1, y    x, y      x+1, y
