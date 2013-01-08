@@ -91,7 +91,7 @@ public class Life {
                 backbuffer[i][j] = neighbours(i, j); 
             }
         }        
-        lattice = backbuffer;
+        lattice = backbuffer; //?
     }
     
     private boolean neighbours(int x, int y)
@@ -102,7 +102,7 @@ public class Life {
         // x-1, y   x, y    x+1, y
         //          x, y+1
         
-        //Moore neighborhood (not used)
+        //Moore neighborhood
         
         // x-1, y-1  x, y-1    x+1, y-1
         // x-1, y    x, y      x+1, y
@@ -110,6 +110,7 @@ public class Life {
         
         
         //WORST FIRST SOLUTION EVER as for code elegance (laziness + short on time)
+        //TODO: edge of the matrix handling
         short num = 0;
         if(lattice[x][y-1])
         {
@@ -128,19 +129,19 @@ public class Life {
             num++;
         }
         
-        if(lattice[x][y-1])
+        if(lattice[x-1][y-1])
         {
             num++;
         }
-        if(lattice[x][y+1])
+        if(lattice[x-1][y+1])
         {
             num++;
         }
-        if(lattice[x-1][y])
+        if(lattice[x+1][y-1])
         {
             num++;
         }
-        if(lattice[x+1][y])
+        if(lattice[x+1][y+1])
         {
             num++;
         }
